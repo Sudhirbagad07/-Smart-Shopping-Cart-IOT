@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    tools:context=".ShoppingList">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/font_poppins"
+        android:text="Your Products"
+        android:textColor="@color/colorText"
+        android:textSize="29sp"
+        android:textStyle="bold" />
+    <!--    <RecyclerView-->
+    <!--        android:id="@+id/recyclerViewProducts"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent" />-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewProducts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp" />
+
+    <AbsoluteLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonGpay"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_x="14dp"
+            android:layout_y="0dp"
+            android:backgroundTint="@color/colorGreyDark"
+            android:fontFamily="@font/font_poppins"
+            android:text="PAY USING ANY UPI"
+            android:textColor="@color/colorBluishBlack"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:cornerRadius="8dp" />
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_x="283dp"
+            android:layout_y="0dp"
+            android:src="@drawable/ic_upi" />
+    </AbsoluteLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/font_poppins"
+        android:letterSpacing="0.1"
+        android:text="OR"
+        android:textColor="@color/colorSecondary"
+        android:textSize="29sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonCash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/colorGreyDark"
+        android:fontFamily="@font/font_poppins"
+        android:text="PAY BY CASH"
+        android:textColor="@color/colorBackground"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:cornerRadius="8dp" />
+
+</LinearLayout>
