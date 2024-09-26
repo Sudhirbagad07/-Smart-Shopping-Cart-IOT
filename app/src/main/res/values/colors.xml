@@ -19,5 +19,5 @@
     <color name="colorBluishBlack">#15143a</color>
     <color name="colorGoogleButton">#4285F4</color>
     <color name="colorGreyDark">#B9E6E5E5</color>
-
+    <color name="colorShadow">#B3B3B3</color>
 </resources>

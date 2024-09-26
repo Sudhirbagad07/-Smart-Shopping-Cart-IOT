@@ -1,15 +1,18 @@
 package com.example.iotdemo.models;
+
 public class Product {
     private String productName;
     private String productPrice;
+    private String productWeight;
 
     public Product() {
         // Default constructor required for calls to DataSnapshot.getValue(Product.class)
     }
 
-    public Product(String productName, String productPrice) {
+    public Product(String productName, String productPrice, String productWeight) {
         this.productName = productName;
         this.productPrice = productPrice;
+        this.productWeight = productWeight;
     }
 
     public String getProductName() {
@@ -27,4 +30,16 @@ public class Product {
     public void setProductPrice(String productPrice) {
         this.productPrice = productPrice;
     }
+
+    public String getProductWeight() {
+        return productWeight;
+    }
+
+    public void setProductWeight(String productWeight) {
+        this.productWeight = productWeight;
+    }
+
+
 }
+
+

@@ -17,7 +17,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="32dp"
         android:contentDescription="logo sample"
-        android:src="@drawable/ic_smartcart" />
+        android:src="@drawable/ic_logo" />
 
     <!-- Registration Message -->
     <TextView
@@ -33,29 +33,30 @@
     <!-- Email Input -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutEmail"
-        android:layout_width="match_parent"
+        android:layout_width="348dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:gravity="center"
         app:boxBackgroundColor="@color/colorBackground"
         app:boxStrokeColor="@color/colorGreyOutline"
         app:hintTextColor="@color/colorPrimary">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextEmail"
-            android:layout_width="match_parent"
+            android:layout_width="348dp"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_edittext_background"
             android:fontFamily="@font/font_poppins"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:textColor="@color/colorText"
-            android:textColorHint="@color/colorPrimary" />
+            android:textColorHint="@color/colorText" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Password Input -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutPassword"
-        android:layout_width="match_parent"
+        android:layout_width="348dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:boxBackgroundColor="@color/colorBackground"
@@ -64,7 +65,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextPassword"
-            android:layout_width="match_parent"
+            android:layout_width="348dp"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_edittext_background"
             android:fontFamily="@font/font_poppins"
@@ -84,13 +85,14 @@
         android:text="Login"
         android:textColor="@color/colorOnPrimary"
         android:textStyle="bold"
+
         app:backgroundTint="@color/colorAccent"
         app:cornerRadius="8dp" />
 
     <!-- Google Sign-In Button -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonGoogleSignIn"
-        android:layout_width="match_parent"
+        android:layout_width="348dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/font_poppins"
@@ -101,7 +103,10 @@
         app:cornerRadius="8dp"
         app:icon="@drawable/google"
         app:iconGravity="textStart"
-        app:iconPadding="8dp" />
+        app:iconPadding="8dp"
+        app:strokeColor="@android:color/white"
+        app:strokeWidth="2dp" />
+
 
     <!-- Sign Up TextView -->
     <TextView

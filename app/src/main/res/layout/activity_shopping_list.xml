@@ -7,83 +7,100 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
     android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".ShoppingList">
 
-
+    <!-- Title TextView -->
     <TextView
+        android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"
         android:fontFamily="@font/font_poppins"
         android:text="Your Products"
         android:textColor="@color/colorText"
         android:textSize="29sp"
         android:textStyle="bold" />
-    <!--    <RecyclerView-->
-    <!--        android:id="@+id/recyclerViewProducts"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent" />-->
+
+    <!-- RecyclerView for displaying products -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewProducts"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp" />
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1" />
 
-    <AbsoluteLayout
+    <!-- TextView for showing total amount -->
+
+    <TextView
+        android:id="@+id/textViewTotalAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:fontFamily="@font/font_poppins"
+        android:text="Total Amount: ₹0"
+        android:textColor="@color/colorText"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
+    <AbsoluteLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- Button for UPI payment -->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonGpay"
-            android:layout_width="325dp"
+            android:id="@+id/buttonUPI"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_x="14dp"
-            android:layout_y="0dp"
-            android:backgroundTint="@color/colorGreyDark"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/colorAccent"
             android:fontFamily="@font/font_poppins"
             android:text="PAY USING ANY UPI"
-            android:textColor="@color/colorBluishBlack"
+            android:textColor="@color/colorOnPrimary"
             android:textSize="20sp"
             android:textStyle="bold"
             app:cornerRadius="8dp" />
 
         <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_x="283dp"
-            android:layout_y="0dp"
-            android:src="@drawable/ic_upi" />
+            android:id="@+id/imageRupee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_x="316dp"
+            android:layout_y="6dp"
+            android:backgroundTint="@color/colorAccent"
+            android:src="@drawable/baseline_done_24" />
     </AbsoluteLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/font_poppins"
-        android:letterSpacing="0.1"
-        android:text="OR"
-        android:textColor="@color/colorSecondary"
-        android:textSize="29sp"
-        android:textStyle="bold" />
+    <AbsoluteLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- Button to scan more products -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonScanMore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/font_poppins"
+            android:text="SCAN MORE PRODUCTS"
+            android:textColor="@color/colorOnPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/colorAccent"
+            app:cornerRadius="8dp" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonCash"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/colorGreyDark"
-        android:fontFamily="@font/font_poppins"
-        android:text="PAY BY CASH"
-        android:textColor="@color/colorBackground"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:cornerRadius="8dp" />
-
+        <!-- ImageButton for scanning products -->
+        <ImageButton
+            android:id="@+id/imageScanProducts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_x="316dp"
+            android:layout_y="6dp"
+            android:backgroundTint="@color/colorAccent"
+            android:src="@drawable/baseline_qr_code_scanner_new" />
+    </AbsoluteLayout>
 </LinearLayout>

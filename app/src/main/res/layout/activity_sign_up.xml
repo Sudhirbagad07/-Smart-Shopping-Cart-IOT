@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/signUpAc"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    android:id="@+id/signUpAc"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp">
@@ -17,7 +17,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="32dp"
         android:contentDescription="logo sample"
-        android:src="@drawable/ic_smartcart" />
+        android:src="@drawable/ic_logo" />
 
     <!-- Registration Message -->
     <TextView
@@ -33,7 +33,7 @@
     <!-- Email Input -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutEmail"
-        android:layout_width="match_parent"
+        android:layout_width="348dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         app:boxBackgroundColor="@color/colorBackground"
@@ -42,33 +42,39 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextEmail"
-            android:layout_width="match_parent"
+            android:layout_width="348dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:background="@drawable/rounded_edittext_background"
             android:fontFamily="@font/font_poppins"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:textColor="@color/colorText"
             android:textColorHint="@color/colorText" />
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Password Input -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutPassword"
-        android:layout_width="match_parent"
+        android:layout_width="348dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="16dp"
+
         app:boxBackgroundColor="@color/colorBackground"
         app:boxStrokeColor="@color/colorGreyOutline"
         app:hintTextColor="@color/colorPrimary">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextPassword"
-            android:layout_width="match_parent"
+            android:layout_width="348dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:background="@drawable/rounded_edittext_background"
             android:fontFamily="@font/font_poppins"
             android:hint="Password"
+
             android:inputType="textPassword"
             android:textColor="@color/colorText" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -89,18 +95,20 @@
     <!-- Google Sign-In Button -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonGoogleSignIn"
-        android:layout_width="match_parent"
+        android:layout_width="348dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/font_poppins"
         android:text="Continue with Google"
         android:textColor="@color/colorGrey"
         android:textStyle="bold"
-        app:backgroundTint="@color/colorPrimary"
+        app:backgroundTint="@color/colorBackground"
         app:cornerRadius="8dp"
         app:icon="@drawable/google"
         app:iconGravity="textStart"
-        app:iconPadding="8dp" />
+        app:iconPadding="8dp"
+        app:strokeColor="@android:color/white"
+        app:strokeWidth="2dp" />
 
     <!-- Sign In TextView -->
     <TextView
