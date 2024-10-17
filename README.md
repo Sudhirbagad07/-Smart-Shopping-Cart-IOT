@@ -75,6 +75,16 @@ The **Smart Shopping Cart App** is an innovative IoT-based solution designed to 
 
 ---
 
+## **Screenshots**
+
+![Home Screen](/screenshots/HomePage.jpg)
+![Product List](/screenshots/ShoppingList.jpg)
+![Product Details](/screenshots/products_added.jpg)
+![Two Modules](/screenshots/TwoModules.jpg)
+![Add Products Manually](/screenshots/AddProductsManually.jpg)
+![Actual Cart](/screenshots/ActualCart.jpg)
+
+
 ## **Team Members**
 
 - **Vedant Patil**
@@ -108,3 +118,5 @@ For any questions or inquiries, feel free to reach out:
 
 - Email: vijay.22320079@viit.ac.in
 - LinkedIn: https://www.linkedin.com/in/vijaymisal/
+
+
