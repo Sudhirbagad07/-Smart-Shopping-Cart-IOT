@@ -77,12 +77,13 @@ The **Smart Shopping Cart App** is an innovative IoT-based solution designed to 
 
 ## **Screenshots**
 
-![Home Screen](/screenshots/HomePage.jpg)
-![Product List](/screenshots/ShoppingList.jpg)
-![Product Details](/screenshots/products_added.jpg)
-![Two Modules](/screenshots/TwoModules.jpg)
-![Add Products Manually](/screenshots/AddProductsManually.jpg)
-![Actual Cart](/screenshots/ActualCart.jpg)
+<img src="/screenshots/HomePage.jpg" alt="Home Screen" width="300"/>
+<img src="/screenshots/ShoppingList.jpg" alt="Product List" width="300"/>
+<img src="/screenshots/products_added.jpg" alt="Product Details" width="300"/>
+<img src="/screenshots/TwoModules.jpg" alt="Two Modules" width="300"/>
+<img src="/screenshots/AddProductsManually.jpg" alt="Add Products Manually" width="300"/>
+<img src="/screenshots/ActualCart.jpg" alt="Actual Cart" width="300"/>
+
 
 
 ## **Team Members**
