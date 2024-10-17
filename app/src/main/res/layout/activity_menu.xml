@@ -13,8 +13,8 @@
 
     <AbsoluteLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="40dp"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp">
 
 
         <TextView
@@ -41,48 +41,49 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonScanProducts"
             android:layout_width="386dp"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
+            android:layout_marginTop="16dp"
             android:layout_x="15dp"
             android:layout_y="580dp"
             android:fontFamily="@font/font_poppins"
-            android:text="USE PHONE AS SCANNER"
+            android:text="SCAN WITH PHONE"
             android:textColor="@color/colorOnPrimary"
-            android:textSize="22dp"
+            android:textSize="22sp"
             android:textStyle="bold"
             app:backgroundTint="@color/colorAccent"
             app:cornerRadius="8dp" />
 
         <ImageButton
             android:id="@+id/imageScanProducts"
-            android:layout_width="52dp"
-            android:layout_height="46dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/buttonLogin"
-            android:layout_x="344dp"
-            android:layout_y="586dp"
+            android:layout_x="324dp"
+            android:layout_y="581dp"
             android:backgroundTint="@color/colorAccent"
             app:srcCompat="@drawable/baseline_qr_code_scanner_24" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonCartConnect"
             android:layout_width="386dp"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:layout_x="13dp"
             android:layout_y="443dp"
             android:fontFamily="@font/font_poppins"
             android:text="CONNECT YOUR CART"
             android:textColor="@color/colorOnPrimary"
-            android:textSize="22dp"
+            android:textSize="22sp"
             android:textStyle="bold"
             app:backgroundTint="@color/colorAccent"
             app:cornerRadius="8dp" />
 
         <ImageButton
             android:id="@+id/imageCartConnect"
-            android:layout_width="52dp"
-            android:layout_height="46dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/buttonLogin"
-            android:layout_x="338dp"
-            android:layout_y="448dp"
+            android:layout_x="323dp"
+            android:layout_y="446dp"
             android:backgroundTint="@color/colorAccent"
             app:srcCompat="@drawable/baseline_add_circle_outline_24" />
 

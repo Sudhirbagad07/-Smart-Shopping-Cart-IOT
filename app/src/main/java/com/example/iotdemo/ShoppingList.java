@@ -3,10 +3,13 @@ package com.example.iotdemo;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.InputType;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,7 +33,7 @@ public class ShoppingList extends AppCompatActivity {
     private ProductAdapter productAdapter;
     private List<Product> productList;
     private DatabaseReference databaseReference;
-    private TextView totalAmountTextView;
+    private TextView totalAmountTextView, totalWeightTextView;
     private double totalAmount = 0.0;
     private double totalWeight = 0.0;
 
@@ -43,11 +46,15 @@ public class ShoppingList extends AppCompatActivity {
         setupRecyclerView();
         initializeDatabaseReference();
         setOnClickListeners();
+
+        findViewById(R.id.buttonAddProductManually).setOnClickListener(v -> openNumberInputDialog());
     }
 
     private void initializeViews() {
         recyclerView = findViewById(R.id.recyclerViewProducts);
         totalAmountTextView = findViewById(R.id.textViewTotalAmount);
+        totalWeightTextView = findViewById(R.id.textViewTotalWeight);
+
     }
 
     private void setupRecyclerView() {
@@ -71,6 +78,7 @@ public class ShoppingList extends AppCompatActivity {
     private void updateTotalAmount(double price) {
         totalAmount += price;
         totalAmountTextView.setText(String.format("Total Amount: ₹%.2f", totalAmount));
+
     }
 
     private void updateTotalAmountOnRemove(double price) {
@@ -80,6 +88,8 @@ public class ShoppingList extends AppCompatActivity {
 
     private void updateTotalWeight(double weight) {
         totalWeight += weight;
+        totalWeightTextView.setText(String.format("Total Weight: %.2f kg", totalWeight));
+
     }
 
     // The rest of your existing methods remain the same...
@@ -183,4 +193,36 @@ public class ShoppingList extends AppCompatActivity {
 //            Toast.makeText(this, "Google Pay is not installed", Toast.LENGTH_SHORT).show();
 //        }
     }
+
+    private void openNumberInputDialog() {
+        // Create an EditText to accept user input
+        EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_NUMBER); // Restrict input to numbers
+
+        // Create the AlertDialog
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        dialogBuilder.setTitle("Enter barcode id: ");
+        dialogBuilder.setView(input);
+
+        // Set the Positive button to handle OK click
+        dialogBuilder.setPositiveButton("OK", (dialog, which) -> {
+            // Get the input value
+            String numberInput = input.getText().toString();
+            if (!numberInput.isEmpty()) {
+//                Toast.makeText(ShoppingList.this, "Entered: " + numberInput, Toast.LENGTH_SHORT).show();
+                fetchProductDetails(numberInput);
+
+            } else {
+                Toast.makeText(ShoppingList.this, "No input provided", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Set the Negative button to handle Cancel click
+        dialogBuilder.setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss());
+
+        // Show the dialog
+        AlertDialog dialog = dialogBuilder.create();
+        dialog.show();
+    }
+
 }

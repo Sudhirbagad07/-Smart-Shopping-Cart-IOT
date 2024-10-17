@@ -3,11 +3,14 @@ package com.example.iotdemo;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,7 +28,7 @@ import java.util.List;
 
 public class ActualCart extends AppCompatActivity implements ProductAdapter.RemoveProductListener {
 
-    private TextView textViewTotalAmount;
+    private TextView textViewTotalAmount, textViewTotalWeight;
     private RecyclerView recyclerViewProducts;
     private ProductAdapter productAdapter;
     private List<Product> productList = new ArrayList<>();
@@ -38,7 +41,9 @@ public class ActualCart extends AppCompatActivity implements ProductAdapter.Remo
         setContentView(R.layout.activity_actual_cart);
 
         textViewTotalAmount = findViewById(R.id.textViewTotalAmount);
+        textViewTotalWeight = findViewById(R.id.textViewTotalWeight2);
         recyclerViewProducts = findViewById(R.id.recyclerViewProducts);
+
         recyclerViewProducts.setLayoutManager(new LinearLayoutManager(this));
 
         // Initialize the ProductAdapter with a listener
@@ -53,6 +58,8 @@ public class ActualCart extends AppCompatActivity implements ProductAdapter.Remo
         if (scannedId != null) {
             fetchProductData(scannedId);
         }
+
+        findViewById(R.id.buttonAddProductManually).setOnClickListener(v -> openNumberInputDialog());
 
         // Set up UPI payment button
         MaterialButton buttonUPI = findViewById(R.id.buttonUPI);
@@ -131,5 +138,55 @@ public class ActualCart extends AppCompatActivity implements ProductAdapter.Remo
             Toast.makeText(this, "Total Amount: ₹" + amount, Toast.LENGTH_SHORT).show();
             startActivityForResult(intent, 1);
         }
+    }
+
+    private void openNumberInputDialog() {
+        // Create an EditText to accept user input
+        EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_NUMBER); // Restrict input to numbers
+
+        // Create the AlertDialog
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        dialogBuilder.setTitle("Enter barcode id: ");
+        dialogBuilder.setView(input);
+
+        // Set the Positive button to handle OK click
+        dialogBuilder.setPositiveButton("OK", (dialog, which) -> {
+            // Get the input value
+            String numberInput = input.getText().toString();
+            if (!numberInput.isEmpty()) {
+//                Toast.makeText(ShoppingList.this, "Entered: " + numberInput, Toast.LENGTH_SHORT).show();
+                fetchProductDetails(numberInput);
+
+            } else {
+                Toast.makeText(ActualCart.this, "No input provided", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Set the Negative button to handle Cancel click
+        dialogBuilder.setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss());
+
+        // Show the dialog
+        AlertDialog dialog = dialogBuilder.create();
+        dialog.show();
+    }
+
+    private void fetchProductDetails(String productId) {
+        databaseReference.child(productId).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    handleProductData(dataSnapshot);
+                } else {
+                    Toast.makeText(ActualCart.this, "No product found for the scanned result", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(ActualCart.this, "Failed to fetch product details", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }

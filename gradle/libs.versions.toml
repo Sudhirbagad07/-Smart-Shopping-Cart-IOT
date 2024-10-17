@@ -8,6 +8,7 @@ devEasyupipayment = "3.0.3"
 easyupipayment = "2.0"
 easyupipaymentVersion = "LATEST_VERSION_HERE"
 firebaseDatabaseVersion = "20.0.3"
+googleBarcodeScanning = "18.1.0"
 gson = "2.10.1"
 javaWebsocket = "1.5.2"
 junit = "4.13.2"
@@ -34,6 +35,7 @@ visionCommon = "17.3.0"
 barcode-scanning = { module = "com.google.mlkit:barcode-scanning", version.ref = "visionCommon" }
 barcode-scanning-v1700 = { module = "com.google.mlkit:barcode-scanning", version.ref = "barcodeScanningVersion" }
 barcode-scanning-v1703 = { module = "com.google.mlkit:barcode-scanning", version.ref = "barcodeScanning" }
+barcode-scanning-v1810 = { module = "com.google.mlkit:barcode-scanning", version.ref = "googleBarcodeScanning" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 core = { module = "com.google.zxing:core", version.ref = "core" }
 dev-easyupipayment = { module = "dev.shreyaspatil.EasyUpiPayment:EasyUpiPayment", version.ref = "easyupipaymentVersion" }
